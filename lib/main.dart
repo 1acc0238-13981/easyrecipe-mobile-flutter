@@ -1,5 +1,5 @@
-import 'package:easy_recipe/onboarding_page.dart';
-import 'package:easy_recipe/theme.dart';
+import 'package:easy_recipe/features/onboarding/onboarding_page.dart';
+import 'package:easy_recipe/core/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {

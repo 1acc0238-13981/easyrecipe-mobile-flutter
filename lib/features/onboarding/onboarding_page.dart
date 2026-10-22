@@ -1,4 +1,4 @@
-import 'package:easy_recipe/login_page.dart';
+import 'package:easy_recipe/features/auth/login_page.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -14,7 +14,18 @@ class OnboardingPage extends StatelessWidget {
           height: double.infinity,
           fit: BoxFit.cover,
         ),
-
+        Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: AlignmentGeometry.topCenter,
+              end: AlignmentGeometry.bottomCenter,
+              colors: [
+                Colors.transparent,
+                Theme.of(context).colorScheme.shadow.withAlpha(120),
+              ],
+            ),
+          ),
+        ),
         SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(16),
