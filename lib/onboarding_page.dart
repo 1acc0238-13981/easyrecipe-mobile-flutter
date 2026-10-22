@@ -15,16 +15,21 @@ class OnboardingPage extends StatelessWidget {
           fit: BoxFit.cover,
         ),
 
-        Padding(
-          padding: const EdgeInsets.only(bottom: 32),
-          child: FilledButton(
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => LoginPage()),
-              );
-            },
-            child: Text("Continue"),
+        SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: SizedBox(
+              width: double.infinity,
+              child: FilledButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
+                },
+                child: Text("Continue"),
+              ),
+            ),
           ),
         ),
       ],
