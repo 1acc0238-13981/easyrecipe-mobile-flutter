@@ -1,6 +1,6 @@
-import 'package:easy_recipe/features/auth/login_page.dart';
 import 'package:easy_recipe/features/home/presentation/home_view_model.dart';
 import 'package:easy_recipe/features/home/presentation/recipe_card.dart';
+import 'package:easy_recipe/features/home/presentation/recipe_detail_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -36,7 +36,9 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
+                  MaterialPageRoute(
+                    builder: (context) => RecipeDetailPage(recipe: recipe),
+                  ),
                 );
               },
               child: RecipeCard(recipe: recipe),

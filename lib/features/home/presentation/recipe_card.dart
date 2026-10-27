@@ -11,15 +11,18 @@ class RecipeCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadiusGeometry.vertical(
-              top: Radius.circular(8),
-            ),
-            child: Image.network(
-              recipe.image,
-              width: double.infinity,
-              height: 200,
-              fit: BoxFit.cover,
+          Hero(
+            tag: recipe.id,
+            child: ClipRRect(
+              borderRadius: BorderRadiusGeometry.vertical(
+                top: Radius.circular(8),
+              ),
+              child: Image.network(
+                recipe.image,
+                width: double.infinity,
+                height: 200,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Padding(
