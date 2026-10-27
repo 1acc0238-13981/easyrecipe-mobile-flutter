@@ -1,4 +1,5 @@
 import 'package:easy_recipe/features/home/presentation/home_view_model.dart';
+import 'package:easy_recipe/features/home/presentation/recipe_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -30,17 +31,7 @@ class _HomePageState extends State<HomePage> {
           itemCount: viewModel.recipes.length,
           itemBuilder: (context, index) {
             final recipe = viewModel.recipes[index];
-            return ListTile(
-              leading: ClipOval(
-                child: Image.network(
-                  recipe.image,
-                  width: 48,
-                  height: 48,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              title: Text(recipe.title),
-            );
+            return RecipeCard(recipe: recipe);
           },
         );
       },
