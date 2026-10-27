@@ -1,7 +1,4 @@
-import 'package:easy_recipe/features/home/application/get_recipes_use_case.dart';
-import 'package:easy_recipe/features/home/domain/recipe_repository.dart';
-import 'package:easy_recipe/features/home/infrastructure/recipe_repository_impl.dart';
-import 'package:easy_recipe/features/home/infrastructure/remote/recipe_api.dart';
+import 'package:easy_recipe/features/home/infrastructure/di/dependency_injection.dart';
 import 'package:easy_recipe/features/home/presentation/home_page.dart';
 import 'package:easy_recipe/features/home/presentation/home_view_model.dart';
 import 'package:flutter/material.dart';
@@ -15,26 +12,12 @@ class MainPage extends StatefulWidget {
 
 class _MainPagState extends State<MainPage> {
   int selectedIndex = 0;
-  late RecipeApi api;
-  late RecipeRepository repository;
-  late GetRecipesUseCase useCase;
-  late HomeViewModel viewModel;
 
-  late List<Widget> pages = [
-  
+  final List<Widget> pages = [
+    HomePage(viewModel: getIt<HomeViewModel>()),
+    Text('Favorites'),
+    Text('Cart'),
   ];
-
-  @override
-  void initState() {
-    super.initState();
-    api = RecipeApi();
-    repository = RecipeRepositoryImpl(api: api);
-    useCase = GetRecipesUseCase(repository: repository);
-    viewModel = HomeViewModel(getRecipesUseCase: useCase);
-    
-    pages = [HomePage(viewModel: viewModel), Text("Favorites"), Text("Cart")];
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

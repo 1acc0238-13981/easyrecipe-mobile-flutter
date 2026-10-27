@@ -1,8 +1,10 @@
+import 'package:easy_recipe/features/home/infrastructure/di/dependency_injection.dart';
 import 'package:easy_recipe/features/onboarding/onboarding_page.dart';
 import 'package:easy_recipe/core/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  setupDependencies();
   runApp(const MainApp());
 }
 
