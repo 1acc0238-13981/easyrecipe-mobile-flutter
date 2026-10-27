@@ -1,6 +1,7 @@
 import 'package:easy_recipe/features/home/application/get_recipes_use_case.dart';
 import 'package:easy_recipe/features/home/domain/recipe_repository.dart';
 import 'package:easy_recipe/features/home/infrastructure/recipe_repository_impl.dart';
+import 'package:easy_recipe/features/home/infrastructure/remote/recipe_api.dart';
 import 'package:easy_recipe/features/home/presentation/home_page.dart';
 import 'package:easy_recipe/features/home/presentation/home_view_model.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPagState extends State<MainPage> {
   int selectedIndex = 0;
+  late RecipeApi api;
   late RecipeRepository repository;
   late GetRecipesUseCase useCase;
   late HomeViewModel viewModel;
@@ -25,7 +27,8 @@ class _MainPagState extends State<MainPage> {
   @override
   void initState() {
     super.initState();
-    repository = RecipeRepositoryImpl();
+    api = RecipeApi();
+    repository = RecipeRepositoryImpl(api: api);
     useCase = GetRecipesUseCase(repository: repository);
     viewModel = HomeViewModel(getRecipesUseCase: useCase);
     

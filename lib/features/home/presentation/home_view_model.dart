@@ -15,7 +15,6 @@ class HomeViewModel extends ChangeNotifier {
     isLoading = true;
     notifyListeners();
 
-    await Future.delayed(Duration(seconds: 2));
     recipes = await getRecipesUseCase.execute();
     isLoading = false;
     notifyListeners();

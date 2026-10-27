@@ -16,7 +16,7 @@ class RecipeDto {
       id: json['id'],
       name: json['name'],
       image: json['image'],
-      rating: json['rating'],
+      rating: (json['rating'] as num).toDouble() ,
     );
   }
 }
