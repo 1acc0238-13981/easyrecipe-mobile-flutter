@@ -1,4 +1,5 @@
 import 'package:easy_recipe/core/di/dependency_injection.dart';
+import 'package:easy_recipe/features/favorites/presentation/favorites_page.dart';
 import 'package:easy_recipe/features/home/presentation/home_page.dart';
 import 'package:easy_recipe/features/home/presentation/home_view_model.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class _MainPagState extends State<MainPage> {
 
   final List<Widget> pages = [
     HomePage(viewModel: getIt<HomeViewModel>()),
-    Text('Favorites'),
+    FavoritesPage(viewModel: getIt<HomeViewModel>()),
     Text('Cart'),
   ];
   @override

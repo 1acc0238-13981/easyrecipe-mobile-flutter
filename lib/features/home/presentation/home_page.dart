@@ -41,7 +41,13 @@ class _HomePageState extends State<HomePage> {
                   ),
                 );
               },
-              child: RecipeCard(recipe: recipe),
+              child: RecipeCard(
+                recipe: recipe,
+                isFavorite: viewModel.isFavorite(recipe.id),
+                onToggleFavorite: () {
+                  viewModel.toggleFavoriteRecipe(recipe.id);
+                },
+              ),
             );
           },
         );
