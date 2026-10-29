@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
       builder: (context, child) {
         final viewModel = widget.viewModel;
         if (viewModel.isLoading) {
-          return CircularProgressIndicator();
+          return Center(child: CircularProgressIndicator());
         }
 
         return ListView.builder(

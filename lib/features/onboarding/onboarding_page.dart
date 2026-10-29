@@ -27,18 +27,33 @@ class OnboardingPage extends StatelessWidget {
           ),
         ),
         SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: SizedBox(
-              width: double.infinity,
-              child: FilledButton(
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginPage()),
-                  );
-                },
-                child: Text("Continue"),
+          child: Align(
+            alignment: AlignmentGeometry.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                
+                children: [
+                  Text(
+                    "Welcome to Easy Recipe",
+                    style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                  SizedBox(
+                    width: double.infinity,
+                    child: FilledButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => LoginPage()),
+                        );
+                      },
+                      child: Text("Continue"),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

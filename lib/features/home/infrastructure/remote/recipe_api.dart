@@ -18,7 +18,7 @@ class RecipeApi {
       final List jsons = json['results'];
       return jsons.map((e) => RecipeDto.fromJson(e)).toList();
     } else {
-      throw Exception('Faile to load recipes');
+      throw Exception('Failed to load recipes');
     }
   }
 }
