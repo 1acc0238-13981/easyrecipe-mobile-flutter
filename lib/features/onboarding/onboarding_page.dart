@@ -26,13 +26,14 @@ class OnboardingPage extends StatelessWidget {
             ),
           ),
         ),
-        SafeArea(
-          child: Align(
-            alignment: AlignmentGeometry.bottomCenter,
+        Align(
+          alignment: AlignmentGeometry.bottomCenter,
+          child: SafeArea(
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
-                
+                mainAxisSize: MainAxisSize.min,
+                spacing: 16,
                 children: [
                   Text(
                     "Welcome to Easy Recipe",
@@ -40,6 +41,13 @@ class OnboardingPage extends StatelessWidget {
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
+                  ),
+                  Text(
+                    "Discover and share delicious recipes with our easy-to-use app.",
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          color: Colors.white,
+                        ),
+                    textAlign: TextAlign.center,
                   ),
                   SizedBox(
                     width: double.infinity,
