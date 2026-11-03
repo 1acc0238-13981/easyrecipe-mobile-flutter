@@ -17,7 +17,6 @@ class _MainPagState extends State<MainPage> {
   final List<Widget> pages = [
     HomePage(viewModel: getIt<HomeViewModel>()),
     FavoritesPage(viewModel: getIt<HomeViewModel>()),
-    Text('Cart'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -40,11 +39,6 @@ class _MainPagState extends State<MainPage> {
             icon: Icon(Icons.favorite_outline),
             selectedIcon: Icon(Icons.favorite),
             label: "Favorites",
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.shopping_cart_outlined),
-            selectedIcon: Icon(Icons.shopping_cart),
-            label: "Cart",
           ),
         ],
       ),
