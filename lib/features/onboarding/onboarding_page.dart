@@ -1,4 +1,4 @@
-import 'package:easy_recipe/features/auth/login_page.dart';
+import 'package:easy_recipe/features/auth/presentation/login_page.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingPage extends StatelessWidget {
