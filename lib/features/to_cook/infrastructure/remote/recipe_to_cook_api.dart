@@ -33,4 +33,22 @@ class RecipeToCookApi {
 
     throw Exception('Failed to load recipes to cook');
   }
+
+  Future<void> toggleRecipeToCook(int id) async {
+    final Uri uri = Uri.parse(url);
+    final token = await _storage.getToken();
+
+    http.Response response = await http.post(
+      uri,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer $token',
+      },
+      body: {'recipeID': id},
+    );
+
+    if (response.statusCode != HttpStatus.ok) {
+      throw Exception('Failed toggle recipe to cook');
+    }
+  }
 }
