@@ -41,10 +41,10 @@ class RecipeToCookApi {
     http.Response response = await http.post(
       uri,
       headers: {
-        'Content-Type': 'application/json',
         'Authorization': 'Bearer $token',
+        'Content-Type': 'application/json',
       },
-      body: {'recipeID': id},
+      body: jsonEncode({'recipeId': id}),
     );
 
     if (response.statusCode != HttpStatus.ok) {

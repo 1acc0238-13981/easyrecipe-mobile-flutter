@@ -13,7 +13,9 @@ class HomeViewModel extends ChangeNotifier {
     required this.getRecipes,
     required this.getFavorites,
     required this.toggleFavorite,
-  });
+  }) {
+    loadRecipes();
+  }
 
   bool isLoading = false;
   String? errorMessage;
